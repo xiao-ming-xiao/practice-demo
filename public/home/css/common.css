@@ -1,0 +1,83 @@
+body {
+    background-color: rgb(241, 241, 241);
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.header {}
+
+.header {
+    /* position: relative; */
+    /* display: flex; */
+    width: 100%;
+    height: 100px;
+    /* background-color: darkgray; */
+    margin-top: 20px;
+    /* border-bottom: 2px solid #333; */
+}
+
+.header img {
+    width: 200px;
+    /* flex: 1; */
+    height: 100px;
+    margin-left: 10%;
+}
+
+.input-group {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+
+/* 下拉菜单格式 */
+
+.tab {
+    position: relative;
+    height: 40px;
+    /* background-color: #FECC5B; */
+    background-color: rgb(37, 98, 38);
+}
+
+.tab ul {
+    display: flex;
+    margin-left: 10%;
+}
+
+.tab ul li {
+    float: left;
+    flex: 1;
+}
+
+.tab ul li a {
+    color: #fff;
+    font-size: 16px;
+    line-height: 40px;
+}
+
+
+/* 左侧导航栏CSS */
+
+.navContent li a {
+    font-size: 12px;
+}
+
+.sBox .subNav span {
+    font-size: 14px;
+}
+
+
+/* 右侧内容区 margin-left */
+
+.right-product {
+    margin-left: 20px;
+}
+
+
+/* category_cloth input CSS */
+
+.navbar-form {
+    margin-top: 100px;
+}

@@ -1,0 +1,3 @@
+<script type="text/jacascript">
+    $('#loginForm'); $('.left-category li').on('hover',function(){ console.log($(this).attr('value')); $.post("http://localhost:80/home/index", { category:$(this).attr('value') }, function(result){ console.log(result); } ) })
+</script>

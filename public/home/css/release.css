@@ -1,0 +1,106 @@
+.form {
+    width: 500px;
+    margin: 0px auto;
+}
+
+.price {
+    visibility: hidden;
+}
+
+.dp {
+    width: 100%;
+    height: 30px;
+    border: 1px solid #333;
+}
+
+.pl {
+    float: left;
+    color: rgb(51, 51, 51);
+}
+
+.pr {
+    float: right;
+    color: rgb(250, 28, 28);
+}
+
+.form {
+    width: 50%;
+    background-color: #fff;
+    /* border: 1px solid #333; */
+}
+
+.form h1 {
+    text-align: center;
+}
+
+.desc-group {
+    border: 0.1em solid #ddd;
+    border-radius: 3px;
+    padding: 0.8em;
+}
+
+.desc-group textarea {
+    font-size: 1em;
+    width: 100%;
+    height: 6em;
+    text-align: left;
+    border: none;
+}
+
+.desc-group .pic {
+    width: 30%;
+    border: none;
+}
+
+.desc-group input {
+    border: none;
+}
+
+.img_box ul {
+    overflow: hidden;
+}
+
+.img_box ul li {
+    float: left;
+    width: 20%;
+    margin-right: 2.5%;
+    margin-top: 1em;
+    padding: 20% 0 0;
+    position: relative;
+    cursor: pointer;
+}
+
+.img_box ul li img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+}
+
+.img_box ul .add_btn {
+    border: 1px solid #e5e5e5;
+    background: url(../image/add.png) no-repeat 50% 50%;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.img_box ul .del {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    line-height: 15px;
+    text-align: center;
+    font-size: 1.5em;
+    background: rgba(0, 0, 0, .5);
+    color: #fff;
+    right: 0;
+    top: 0;
+    font-style: inherit;
+    cursor: pointer;
+}
+
+.btn {
+    width: 100%;
+    background-color: #339966;
+}

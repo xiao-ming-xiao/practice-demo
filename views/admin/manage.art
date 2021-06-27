@@ -1,0 +1,14 @@
+{{extend './common/layout.art'}}
+   {{block 'main'}}
+    <!-- 顶部导航栏 -->
+   {{include './common/header.art'}}
+    <div class="down-main">
+        <!-- 左侧导航栏 -->
+        {{include './common/aside.art'}}
+        <!-- 右侧内容区 -->
+        <div class="right-product right-off">
+            <h1>welcome,{{userInfo.username}}!</h1>
+        </div>
+    </div>
+    {{/block}}
+    

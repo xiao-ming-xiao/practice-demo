@@ -1,0 +1,94 @@
+        body {
+            background-color: rgb(241, 241, 241);
+        }
+        
+        a:hover {
+            text-decoration: none;
+        }
+        
+        .header {}
+        
+        .header {
+            /* position: relative; */
+            /* display: flex; */
+            width: 100%;
+            height: 100px;
+            /* background-color: darkgray; */
+            margin-top: 20px;
+            /* border-bottom: 2px solid #333; */
+        }
+        
+        .header img {
+            width: 200px;
+            /* flex: 1; */
+            height: 100px;
+            margin-left: 10%;
+        }
+        
+        .input-group {
+            position: absolute;
+            top: 35px;
+            left: -90px;
+        }
+        /* 下拉菜单格式 */
+        
+        .tab {
+            position: relative;
+            height: 40px;
+            /* background-color: #FECC5B; */
+            background-color: rgb(37, 98, 38);
+        }
+        
+        .tab ul {
+            display: flex;
+            margin-left: 10%;
+        }
+        
+        .tab ul li {
+            float: left;
+            flex: 1;
+        }
+        
+        .tab ul li a {
+            color: #fff;
+            font-size: 16px;
+            line-height: 40px;
+        }
+        
+        .container {
+            /* top: 40px; */
+            /* width: 82%; */
+        }
+        /* 内容展示区css */
+        /* 返回顶部格式 */
+        
+        #scroll {
+            position: fixed;
+            bottom: 50px;
+            right: 0px;
+            display: none;
+        }
+        
+        .scrollShow {
+            display: block!important;
+        }
+        
+        .scrollItem {
+            width: 47px;
+            height: 47px;
+            /* border: #e1e1e1 1px solid; */
+            cursor: pointer;
+            text-align: center;
+            padding-top: 10px;
+        }
+        
+        #toTop {
+            background: url(../image/top01.png) no-repeat;
+        }
+        
+        footer {
+            width: 100%;
+            height: 100px;
+            background-color: rgb(245, 245, 245);
+            margin-top: 40px;
+        }

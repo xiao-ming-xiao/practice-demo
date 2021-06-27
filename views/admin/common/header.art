@@ -1,0 +1,40 @@
+ <nav class="nav navbar-default navbar-mystyle navbar-fixed-top">
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> 
+           <span class="icon-bar"></span> 
+           <span class="icon-bar"></span> 
+           <span class="icon-bar"></span> 
+          </button>
+            <a class="navbar-brand mystyle-brand"><span class="glyphicon glyphicon-home"></span></a> </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="li-border"><a class="mystyle-color" href="/admin/manage">管理控制台</a></li>
+
+            </ul>
+            <ul class="nav navbar-nav">
+                <li class="li-border">
+                    <a class="mystyle-color" href="/admin/newManage">创建管理员</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav pull-right">
+                
+                
+                <li class="dropdown li-border"><a href="#" class="dropdown-toggle mystyle-color" data-toggle="dropdown">帮助与文档<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">帮助与文档</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">论坛</a></li>
+                        <li class="divider"></li>
+                    </ul>
+                </li>
+                <li class="dropdown li-border">
+                    <a href="#" class="dropdown-toggle mystyle-color" data-toggle="dropdown">{{userInfo.username}}
+               <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/admin/logout">退出</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+    </nav>

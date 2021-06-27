@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/home/css/base.css">
+
+    <link rel="stylesheet" href="/home/css/stylee.css">
+    <link rel="stylesheet" href="/home/css/index.css">
+    <!-- <link rel="stylesheet" type="text/css" href="/home/css/slide.css"> -->
+    <!-- <link rel="stylesheet" href="/home/css/banner.css"> -->
+    <link rel="stylesheet" href="/home/css/footer.css">
+    <link rel="stylesheet" href="./css/jquery-ui.css">
+    <link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- <script src="//code.jquery.com/jquery-1.9.1.js"></script> -->
+    <script src="./js/jquery-ui.js"></script>
+
+    <script src="/home/js/animate.js"></script>
+    <!-- <script src="/home/js/banner.js"></script> -->
+</head>
+
+<body>
+    <!-- 首页 -->
+
+    <!-- 头部 -->
+
+    <div class="header container row">
+        <div class="col-lg-8">
+            <img src="image/logo.jpeg" alt="logo">
+        </div>
+        <!-- 搜索框 -->
+        <div class="col-lg-4">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for...">
+                <span class="input-group-btn">
+              <button class="btn btn-default" type="button">搜索</button>
+                </span>
+            </div>
+        </div>
+    </div>
+    <!-- 导航栏 -->
+  {{include './common/nav.art'}}
+    <!-- 内容展示 -->
+    <div class="container">
+        <div class="pro-center">
+
+            <div class="title">物品展示中心</div>
+            <div class="sub-title">
+                <span>——</span>
+                <span class="text">Products Center</span>
+                <span>——</span>
+            </div>
+            <div class="pro-content">
+                <div class="pro-left">
+                    <div class="left-title">
+                        <span>-</span>
+                        <span class="text">闲置分类</span>
+                        <span>-</span>
+                    </div>
+                    <!--分类，on状态为当前高亮-->
+                    <div class="left-category">
+                        <ul>
+                            <li value="cloth">服装类</li>
+                            <li value="dailyuse">生活用品</li>
+                            <li value="makeup">美妆</li>
+                            <li value="digital">手机数码</li>
+                        </ul>
+                    </div>
+                </div>
+                <!--对应分类的内容，active状态为显示-->
+                <!--服装类-->
+                <div class="pro-right">
+                    <ul>
+                    {{each cloths}}
+                        <li id="{{$value.id}}">
+                            <a href="#">
+                                <div class="img">
+                                    <img src="{{$value.picture}}" alt="">
+                                </div>
+                                <h4>{{$value.title}}</h4>
+                                <span class="price">￥ {{$value.price}}</span>
+                                <p>{{$value.description}}</p>
+                            </a>
+                        </li>
+                    {{/each}}
+                    </ul>
+                </div>
+                 <!--生活用品-->
+                <div class="pro-right active">
+                    <ul>
+                        {{each dailyuses}}
+                        <li id="{{$value.id}}">
+                            <a href="#">
+                                <div class="img">
+                                    <img src="{{$value.picture}}" alt="">
+                                </div>
+                                <h4>{{$value.title}}</h4>
+                                <span class="price">￥ {{$value.price}}</span>
+                                <p>{{$value.description}}</p>
+                            </a>
+                        </li>
+                    {{/each}}
+                    </ul>
+                </div>
+                 <!--美妆-->
+                <div class="pro-right">
+                    <ul>
+                        {{each makeups}}
+                        <li id="{{$value.id}}">
+                            <a href="#">
+                                <div class="img">
+                                    <img src="{{$value.picture}}" alt="">
+                                </div>
+                                <h4>{{$value.title}}</h4>
+                                <span class="price">￥ {{$value.price}}</span>
+                                <p>{{$value.description}}</p>
+                            </a>
+                        </li>
+                    {{/each}}
+
+                    </ul>
+                </div>
+                 <!--数码-->
+                <div class="pro-right">
+                    <ul>
+                        {{each digitals}}
+                        <li id="{{$value.id}}">
+                            <a href="#">
+                                <div class="img">
+                                    <img src="{{$value.picture}}" alt="">
+                                </div>
+                                <h4>{{$value.title}}</h4>
+                                <span class="price">￥ {{$value.price}}</span>
+                                <p>{{$value.description}}</p>
+                            </a>
+                        </li>
+                    {{/each}}
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- 侧边返回顶部 -->
+    <div id="scroll">
+
+        <div id="toTop" class="scrollItem">
+
+        </div>
+    </div>
+    <script type="text/javascript">
+        // <![CDATA[
+        $(function() {
+            var speed = 500; //自定义滚动速度
+            $(window).scroll(function(e) {
+                    $(window).scrollTop() > 200 ? $("#scroll").fadeIn().addClass("scrollShow") : $("#scroll").fadeOut().removeClass("scrollShow");
+                })
+                //回到顶部
+            $("#toTop").click(function() {
+                $("html,body").animate({
+                    "scrollTop": 0
+                }, speed);
+            });
+
+        });
+
+        // ]]>
+    </script>
+    <script src="js/pinterest_grid.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $("#gallery-wrapper").pinterest_grid({
+                no_columns: 4,
+                padding_x: 10,
+                padding_y: 10,
+                margin_bottom: 50,
+                single_column_breakpoint: 700
+            });
+
+        });
+    </script>
+    <script type="text/javascript">
+        $(function() {
+                $(".nav>li").hover(function() {
+                    $(this).children("ul").stop().slideToggle();
+                });
+            })
+            //轮播图
+            // $('.carousel').carousel()
+            //左侧导航栏
+        $(function() {
+            $("#accordion").accordion({
+                collapsible: true
+            });
+        });
+        // 模态框
+        $('#myModal').on('shown.bs.modal', function() {
+            $('#myInput').focus()
+        })
+
+        $('.left-category ul li').hover(function() {
+            var index = $(this).index();
+            $(this).addClass('on').siblings().removeClass('on');
+            $('.pro-right').removeClass('active').eq(index).addClass('active');
+        })
+        
+        $(".pro-right li").on('click',function(e) {
+           var id=$(this).attr('id');
+            $.post("http://localhost:80/home/contact",{
+                id:id
+            },function(result){
+                alert('联系方式'+result.contact+':'+result.contactNumber);
+            })
+            
+        })
+    </script>
+
+    <script type="text/javascript">
+    
+    </script>
+    <script src="./js/js.js"></script>
+
+</html>
+
+</html>

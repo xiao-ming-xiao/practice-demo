@@ -1,0 +1,127 @@
+body {
+    background-color: rgb(241, 241, 241);
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.header {}
+
+.header {
+    /* position: relative; */
+    /* display: flex; */
+    width: 100%;
+    height: 100px;
+    /* background-color: darkgray; */
+    margin-top: 20px;
+    /* border-bottom: 2px solid #333; */
+}
+
+.header img {
+    width: 200px;
+    /* flex: 1; */
+    height: 100px;
+    margin-left: 10%;
+}
+
+.input-group {
+    position: absolute;
+    top: 35px;
+    left: -90px;
+}
+
+
+/* 下拉菜单格式 */
+
+.tab {
+    position: relative;
+    height: 40px;
+    /* background-color: #FECC5B; */
+    background-color: rgb(37, 98, 38);
+}
+
+.tab ul {
+    display: flex;
+    margin-left: 10%;
+}
+
+.tab ul li {
+    float: left;
+    flex: 1;
+}
+
+.tab ul li a {
+    color: #fff;
+    font-size: 16px;
+    line-height: 40px;
+}
+
+
+/* 左侧导航栏CSS */
+
+.navContent li a {
+    font-size: 12px;
+}
+
+.sBox .subNav span {
+    font-size: 14px;
+}
+
+
+/* 右侧内容区 margin-left */
+
+.right-product {
+    margin-left: 20px;
+}
+
+
+/* category_cloth input CSS */
+
+.navbar-form {
+    margin-top: 100px;
+}
+
+
+/* userinfo页面添加用户按钮 */
+
+.right-off .new {
+    margin-bottom: 15px;
+}
+
+.change {
+    display: none;
+    /* z-index: 999; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    /* height: 20%; */
+    border: 1px solid #333;
+    background-color: rgba(0, 153, 204, .7);
+    border-radius: 15px;
+}
+
+.change form {
+    /* position: relative; */
+}
+
+.change h3 {
+    text-align: center;
+}
+
+.change .form-group {
+    width: 80%;
+    margin: 5px auto;
+}
+
+.change .form-group .buttons {
+    /* position: absolute; */
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.change .form-group .btn {
+    margin-right: 13%;
+}

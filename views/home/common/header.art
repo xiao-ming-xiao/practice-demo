@@ -1,0 +1,8 @@
+ <div class="header container row">
+        <div class="col-lg-8">
+            <img src="image/logo.jpeg" alt="logo">
+        </div>
+       {{block 'search'}}{{/block}}
+</div>
+    
+   

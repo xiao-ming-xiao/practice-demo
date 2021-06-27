@@ -1,0 +1,39 @@
+    .message_item {
+        float: left;
+        width: 48%;
+        border: 1px solid #333;
+        border-radius: 5px;
+        margin-top: 20px;
+        margin-right: 2%;
+        padding: 10px;
+    }
+    
+    .message_item textarea {
+        width: 100%;
+        outline: none;
+    }
+    
+    .message_item .reply {
+        margin-top: 30px;
+        border-top: 1px solid grey;
+    }
+    
+    #hide {
+        float: left;
+    }
+    
+    #release {
+        float: right;
+    }
+    
+    .message_item .reply li {
+        border-bottom: 1px solid rgba(195, 198, 199, 0.897);
+    }
+    
+    .message_item .reply li a {
+        float: right;
+    }
+    
+    .hide {
+        display: none;
+    }

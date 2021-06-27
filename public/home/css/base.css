@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* 指定盒子模型 */
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* 字体不倾斜 */
+
+em,
+i {
+    font-style: normal;
+}
+
+
+/* 去掉小圆点 */
+
+li {
+    list-style: none;
+}
+
+
+/* 图片与文字中线对齐 */
+
+img {
+    /* 照顾低版本，图片外包含链接会有边框的问题 */
+    vertical-align: middle;
+}
+
+
+/* 去掉input默认边框 */
+
+input {
+    outline: none;
+}
+
+
+/* 声明字体 */
+
+@font-face {
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.eot?g0g4lv');
+    src: url('../fonts/icomoon.eot?g0g4lv#iefix') format('embedded-opentype'), url('../fonts/icomoon.ttf?g0g4lv') format('truetype'), url('../fonts/icomoon.woff?g0g4lv') format('woff'), url('../fonts/icomoon.svg?g0g4lv#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+.clearfix:after {
+    visibility: hidden;
+    clear: both;
+    display: block;
+    content: ".";
+    height: 0;
+}
+
+.clearfix {
+    *zoom: 1;
+}

@@ -1,0 +1,22 @@
+ <div class="tab ">
+        <div class="container">
+            <ul>
+                <li>
+                    <a href="/home/index">闲置分类</a>
+                </li>
+                <li>
+                    <a href="/home/release">闲置发布</a>
+                </li>
+                <li>
+                    <a href="/home/help">求助广场</a>
+                </li>
+                <li>
+                    <a href="/home/personal?username={{@userInfo.user_name}}">个人中心</a>
+                </li>
+                <li>
+                    <a href="/home/login">登录 </a>
+                    <a href="/home/register">注册 </a>
+                </li>
+            </ul>
+        </div>
+    </div>

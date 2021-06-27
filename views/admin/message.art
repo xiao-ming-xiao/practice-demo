@@ -1,0 +1,74 @@
+{{extend './common/layout.art'}}
+   {{block 'main'}}
+      <!-- 顶部导航栏 -->
+   {{include './common/header.art'}}
+    <div class="down-main">
+        <!-- 左侧导航栏 -->
+        {{include './common/aside.art'}}
+        <!-- 右侧内容区 -->
+        <div class="right-product right-off">
+            <div class="container-fluid">
+                <div class="info-center">
+                    <div class="page-header">
+                        <div class="pull-left">
+                            <h4>消息中心</h4>
+                        </div>
+                    </div>
+                    <div class="info-center-title">
+                        <span class="padding-large-right manage-title pull-left">
+                              <a class="active" href="#">全部消息</a>
+                           </span>
+                        <span class="padding-large-right pull-left"><a href="#">已读消息(0)</a></span>
+                        <span class="pull-left"><a href="#">未读消息(0)</a></span>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="table-responsive">
+
+                    <table class="table table-bordered table-striped" id="mytable">
+                        <thead>
+                            <tr>
+                                <td>商品名称</td>
+                                <td>商品介绍</td>
+                                <td>商品图片</td>
+                                <td>发布者id</td>
+                                <td>发布时间</td>
+                                <td>卖家联系方式</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>笔芯</td>
+                                <td>0.5mm黑色</td>
+                                <td>pic</td>
+                                <td>0101</td>
+                                <td>2021/5/6</td>
+                                <td>qq123456789</td>
+                            </tr>
+                            <tr>
+                                <td>笔芯</td>
+                                <td>0.5mm黑色</td>
+                                <td>pic</td>
+                                <td>0101</td>
+                                <td>2021/5/6</td>
+                                <td>qq123456789</td>
+                            </tr>
+                            <tr>
+                                <td>笔芯</td>
+                                <td>0.5mm黑色</td>
+                                <td>pic</td>
+                                <td>0101</td>
+                                <td>2021/5/6</td>
+                                <td>qq123456789</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                </div>
+                <div class="show-page hidden">
+                    <ul>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+  {{/block}}

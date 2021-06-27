@@ -1,0 +1,134 @@
+{{extend './common/layout.art'}}
+   {{block 'main'}}
+      <!-- 顶部导航栏 -->
+   {{include './common/header.art'}}
+    <div class="down-main">
+        <!-- 左侧导航栏 -->
+        {{include './common/aside.art'}}
+        <!-- 右侧内容区 -->
+        <div class="right-product right-off">
+            <!--数据表格展示 -->
+            <div class="content-list">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="content">
+                            <div class="w30 left-icon pull-left">
+                                <span class="glyphicon glyphicon-file blue"></span>
+                            </div>
+                            <div class="w70 right-title pull-right">
+                                <div class="title-content">
+                                    <p>手机数码类发布总数</p>
+                                    <h3 class="number">{{@amount}}</h3>
+                                    <button class="btn btn-default">待我处理<span style="color:red;">{{@amount}}</span></button>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <form class="navbar-form navbar-left" role="search">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="女装...">
+                        </div>
+                        <button type="submit" class="btn btn-default">搜索</button>
+                    </form>
+                </div>
+                <div class="clearfix"></div>
+
+              <div class="table-margin ">
+                    <table class="table table-bordered table-header table-hover ">
+                    <thead>
+                        <tr>
+                            <td class="w10 ">名称</td>
+                            <td class="w25 ">描述内容</td>
+                            <td class="w10 ">价格</td>
+                            <td class="w10 ">类别</td>
+                            <td class="w10 ">卖家</td>
+                            <td class="w10 ">联系方式</td>
+                            <td class="w10 ">号码</td>
+                            <td class="w15 ">操作</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                       {{each digitals}}
+                         <tr index={{$value.id}}>
+                            <td>{{$value.title}}</td>
+                            <td>{{$value.description}}</td>
+                            <td>￥{{$value.price}}</td>
+                            <td>{{$value.category}}</td>
+                            <td>{{$value.seller}}</td>
+                            <td>{{$value.contact}}</td>
+                            <td>{{$value.contactNumber}}</td>
+                            <td>
+                                <button type="button " id="edit" class="btn btn-success ">修改</button>
+                                <button type="button " id="del" class="btn btn-danger ">删除</button></td>
+                        </tr>
+                    {{/each}}
+                    </tbody>
+                    </table>
+                 </div>
+
+               <div class="change">
+                <h3>商品修改</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="title">名称</label>
+                        <input type="text" class="form-control" id="title" placeholder="title">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">描述内容</label>
+                        <input type="text" class="form-control" id="description" placeholder="description">
+                    </div>
+                    <div class="form-group">
+                        <label for="category">类别</label>
+                        <input type="text" class="form-control" id="category" placeholder="category">
+                    </div>
+                    <div class="form-group">
+                        <div class="buttons">
+                            <input class="btn btn-default" type="button" id="accept" value="确认">
+                            <input class="btn btn-default" type="button" id="cancle" value="取消">
+                        </div>
+                    </div>
+                </form>
+             </div>
+
+            </div>
+        </div>
+    </div>
+ {{/block}}
+
+ 
+    {{block 'script'}}
+    <script>
+     $(' #edit').on("click", function() {
+            var btn=$(this);
+            var userid = $(this).parent().parent().attr('index');
+            
+            console.log(userid);
+            $('.change').css("display", "block"); 
+
+            $(' #cancle').on("click", function(params) {
+                 $('.change').css("display", "none");
+             })
+            $(' #accept').on("click", function(params) {
+                
+                 $('.change').css("display", "none");
+             });
+
+        });
+        
+        $(' #del').on("click", function(params) {
+            var id = $(this).parent().parent().attr('index');
+             $.post("http://localhost:80/admin/goodsDel", {
+                                id: id   
+                            },
+                            function(result) {
+                            if(status == "success"){
+                                alert("删除成功");
+                            } 
+                            }
+            );
+             $(this).parent().parent().remove();
+
+        })
+    </script>
+    {{/block}}

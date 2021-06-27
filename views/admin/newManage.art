@@ -1,0 +1,69 @@
+{{extend './common/layout.art'}} 
+
+{{block 'link'}}
+<link rel="stylesheet" href="/admin/css/newManage.css">
+{{/block}} 
+
+{{block 'main'}}
+<!-- 顶部导航栏 -->
+{{include './common/header.art'}}
+
+<div class="down-main">
+    <!-- 下侧内容区 -->
+    <div class="right-product right-off">
+      <h1>注册管理员</h1>
+        <div class="formnav">
+            <div class="manageForm">
+                <form action="newManage" method="POST" id='manageForm'>
+                    <p>
+                        <label for="username">昵称：</label>
+                        <input type="text" id="username" name="username"><span>请输入3~20位字符昵称</span>
+                    </p>
+                    <p>
+                        <label for="passWord">登录密码：</label>
+                        <input type="password" id="passWord" name="passward"><span>请输入6~16位字母或数字组合密码</span>
+                    </p>
+                    <p>
+                        <label for="rePassWord">重复登录密码：</label>
+                        <input type="password" id="rePassWord" ><span>请再次输入密码</span>
+                    </p>
+
+
+                    <p>
+                        <label for="tel">关联手机号:</label>
+                        <input type="text" id="tel" name="tel"><span>请输入关联手机号</span>
+                    </p>
+                    <p>
+                        <label for="email">保密邮箱：</label>
+                        <input type="text" id="email" name="email"><span>请输入保密邮箱</span>
+                    </p>
+                    <button>
+                            <img src="./image/button.gif">
+                            </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{{/block}} 
+
+{{block 'script'}}
+<script src="/admin/js/newManage.js"></script>
+ <script>
+    //获取表单数据
+    function serializeToJson(form) {
+      var result = {};
+      var data = form.serializeArray();
+      console.log(data);
+      data.forEach(function(item) {
+          result[item.name] = item.value;
+      })
+      return result;
+  }
+        $('#manageForm').on('submit', function() {
+            var result = serializeToJson($(this));
+            console.log(result);
+            
+        })
+    </script>
+{{/block}}

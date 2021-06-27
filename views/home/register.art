@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>用户注册</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/login.css">
+    <script src="https://s1.pstatp.com/cdn/expire-1-M/jquery/1.10.2/jquery.min.js"></script>
+    <style>
+        body {
+            background: url(./image/user_bg.jpg)no-repeat;
+            background-size: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas class="cavs" width="1575" height="1337"></canvas>
+
+    <div class="loginmain">
+        <div class="login-title">
+            <span>用户注册</span>
+        </div>
+        <form method="POST" action="/home/register" id="registeForm">
+            <div class="login-con">
+                <div class="login-user">
+                    <div class="icon">
+                        <img src="image/user_icon_copy.png" alt="">
+                    </div>
+                    <input type="text" name="user_name" id="uname" placeholder="请输入4~16字母或数字组合" autocomplete="off" value="">
+                    <div class="error">
+                        <span class="glyphicon glyphicon-remove"></span><span> 用户名输入不符合规则，请重新输入</span>
+                    </div>
+                </div>
+                <div class="login-pwd">
+                    <div class="icon">
+                        <img src="image/lock_icon_copy.png" alt="">
+                    </div>
+                    <input type="password" name="user_passward" id="pwd" placeholder="请输入6~18字母或数字组合" autocomplete="off" value="">
+                    <div class="error">
+                        <span class="glyphicon glyphicon-remove"></span><span> 用户名输入不符合规则，请重新输入</span>
+                    </div>
+                </div>
+                <div class="login-yan">
+                    <div class="icon">
+                        <img src="image/key.png" alt="">
+                    </div>
+                    <input type="text" name="user_number" id="number" placeholder="请输入您的学号" autocomplete="off" value="">
+                    <div class="error">
+                        <span class="glyphicon glyphicon-remove"></span><span> 用户名输入不符合规则，请重新输入</span>
+                    </div>
+                </div>
+                <div class="login-btn">
+                    <button type="submit" id="userRegister" value="注册">注册</button>
+                    <span class="user-login"><a href="/home/login">用户登录</a></span>
+                </div>
+
+            </div>
+        </form>
+    </div>
+    <!-- <script src="js/register.js"></script> -->
+    <script type="text/javascript">
+        $("input").change(function(e) {
+            // console.log($(".error").context.style);
+
+            if ($(this).context.id == "uname") {
+                let reg_uname = /^[a-z0-9_-]{4,16}$/;
+                if (reg_uname.test($("#uname").val()) !== true) {
+                    $(this).context.nextElementSibling.style.display = "block";
+                } else {
+                    $(this).context.nextElementSibling.style.display = "none";
+                }
+            } else if ($(this).context.id == "pwd") {
+                let reg_uname = /^[a-z0-9_-]{6,18}$/;
+                if (reg_uname.test($("#pwd").val()) !== true) {
+                    $(this).context.nextElementSibling.style.display = "block";
+                } else {
+                    $(this).context.nextElementSibling.style.display = "none";
+                }
+            } else if ($(this).context.id == "number") {
+                let reg_uname = /^(1+[\d]{10})$/;
+                if (reg_uname.test($("#number").val()) !== true) {
+                    $(this).context.nextElementSibling.style.display = "block";
+                } else {
+                    $(this).context.nextElementSibling.style.display = "none";
+                }
+            }
+        })
+         //获取表单数据
+    function serializeToJson(form) {
+      var result = {};
+      var data = form.serializeArray();
+      console.log(data);
+      data.forEach(function(item) {
+          result[item.name] = item.value;
+      })
+      return result;
+  }
+        $('#registeForm').on('submit', function() {
+            var result = serializeToJson($(this));
+            console.log(result);
+        })
+    </script>
+    <script type="text/javascript">
+    </script>
+</body>

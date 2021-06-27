@@ -1,0 +1,165 @@
+{{extend './common/layout.art'}}
+{{block 'main'}}
+      <!-- 顶部导航栏 -->
+   {{include './common/header.art'}}
+    <div class="down-main">
+        <!-- 左侧导航栏 -->
+        {{include './common/aside.art'}}
+        
+        <!-- 右侧内容区 -->
+        <div class="right-product right-off ">
+
+            <div class="container-fluid ">
+                <div class="manage account-manage info-center ">
+                    <div class="page-header ">
+                        <div class="pull-left ">
+                            <h4>用户中心</h4>
+                        </div>
+                    </div>
+                    <dl class="account-basic clearfix ">
+                        <dt class="pull-left ">
+                                   <p class="account-head ">
+                                       <img src="./image/noavatar_middle.gif ">
+                                   </p>
+                                   </dt>
+                        <dd class="pull-left margin-large-left margin-small-top ">
+                            <p class="text-small ">
+                                <span class="show pull-left base-name ">会员账号</span>:<span class="margin-left ">小明 </span>
+                            </p>
+                            <p class="text-small ">
+                                <span class="show pull-left base-name ">认证状态</span>:
+                                <span class="margin-left ">已认证</span>
+
+                            </p>
+                            <p class="text-small ">
+                                <span class="show pull-left base-name ">注册时间</span>:<span class="margin-left ">2021-06-02 11:50:22</span>
+                            </p>
+                        </dd>
+                    </dl>
+                    </ul>
+                </div>
+            </div>
+            <div class="clearfix "></div>
+            <a href="" class="btn btn-default new">添加用户</a>
+
+             <div class="table-margin ">
+                <table class="table table-bordered table-header table-hover ">
+                    <thead>
+                        <tr>
+                            <td class="w25">_id</td>
+                            <td class="w10">用户ID</td>
+                            <td class="w15">用户名</td>
+                            <td class="w15">用户学号</td>
+                            <td class="w20">注册时间</td>
+                            <td class="w15">操作</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {{each users}}
+                        <tr index={{$value.user_id}}>
+                            <td>{{$value._id}}</td>
+                            <td>{{$value.user_id}}</td>
+                            <td>{{$value.user_name}}</td>
+                            <td>{{$value.user_number}}</td>
+                            <td>{{$value.user_registime}}</td>
+                            <td>
+                                <button type="button " id="edit" class="btn btn-success ">修改</button>
+                                <button type="button " id="del" class="btn btn-danger ">删除</button></td>
+                        </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="change">
+                <h3>用户修改</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="user_name">用户名</label>
+                        <input type="text" class="form-control" id="user_name" placeholder="Username">
+                    </div>
+                    <div class="form-group">
+                        <label for="user_passward">用户密码</label>
+                        <input type="password" class="form-control" id="user_passward" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <label for="user_number">学号</label>
+                        <input type="text" class="form-control" id="user_number" placeholder="Number">
+                    </div>
+                    <div class="form-group">
+                        <div class="buttons">
+                            <input class="btn btn-default" type="button" id="accept" value="确认">
+                            <input class="btn btn-default" type="button" id="cancle" value="取消">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+{{/block}}
+
+{{block 'script'}}
+ <script type="text/javascript ">
+        $(' #edit').on("click", function() {
+            var btn=$(this);
+            var userid = $(this).parent().parent().attr('index');
+            var userChanged={user_name,user_number};
+            console.log(userid);
+            $.post("http://localhost:80/admin/userinfo", 
+                {
+                    user_id: userid
+                },
+                function(user) {
+                    console.log(user);
+                   $('.change').css("display", "block");  
+                    $('#user_name').val(user.user_name);
+                    $('#user_number').val(user.user_number);   
+                    
+                }
+            );
+
+            $(' #cancle').on("click", function(params) {
+                 $('.change').css("display", "none");
+             })
+            $(' #accept').on("click", function(params) {
+                 $.post("http://localhost:80/admin/userchange", {
+                                user_id: userid,
+                                user_name: $('#user_name').val(),
+                                user_passward: $('#user_passward').val(),
+                                user_number: $('#user_number').val()
+                            },
+                            function(result,status) {
+                              if(status == "success"){
+                                alert(result);
+                              }else {
+                                alert(result);
+                                return;
+                              }
+                                
+                            }
+                );
+                 console.log($(this));
+                 userChanged.user_name= $('#user_name').val(),
+                 userChanged.user_number=$('#user_number').val()
+                 $('.change').css("display", "none");
+             });
+
+        });
+        
+        $(' #del').on("click", function(params) {
+            var userid = $(this).parent().parent().attr('index');
+             $.post("http://localhost:80/admin/userdel", {
+                                user_id: userid   
+                            },
+                            function(result) {
+                            if(status == "success"){
+                                alert("删除成功");
+                            } 
+                            }
+            );
+             $(this).parent().parent().remove();
+
+        })
+    </script>
+{{/block}}

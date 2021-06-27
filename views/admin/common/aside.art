@@ -1,0 +1,57 @@
+<div class="left-main left-off">
+            <div class="sidebar-fold"><span class="glyphicon glyphicon-menu-hamburger"></span></div>
+            <div class="subNavBox">
+                <div class="sBox">
+                    <div class="subNav sublist-down "><span class="title-icon glyphicon glyphicon-chevron-down "></span><span class="sublist-title ">用户中心</span>
+                    </div>
+                    <ul class="navContent " style="display:block ">
+                        <li>
+                            <div class=" showtitle " style="width:100px; "><img src="./image/leftimg.png " />账号管理</div>
+                            <a href="/admin/userinfo "><span class="sublist-icon glyphicon glyphicon-user "></span><span class="sub-title ">账号管理</span></a> </li>
+                        <li>
+                            <div class="showtitle " style="width:100px; "><img src="./image/leftimg.png " />消息中心</div>
+                            <a href="/admin/message "><span class="sublist-icon glyphicon glyphicon-comment "></span><span class="sub-title ">消息中心</span></a> </li>
+
+                    </ul>
+                </div>
+                <div class="sBox ">
+                    <div class="subNav sublist-down "><span class="title-icon glyphicon glyphicon-chevron-down "></span><span class="sublist-title ">物品发布分类</span>
+                    </div>
+                    <ul class="navContent " style="display:block ">
+                        <li>
+                            <div class="showtitle " style="width:100px; "><img src="./image/leftimg.png " />服装</div>
+                            <a href="/admin/cloth "><span class="sublist-icon glyphicon glyphicon-shopping-cart "></span><span class="sub-title ">服装</span></a> </li>
+                        <li>
+                            <div class="showtitle " style="width:100px; "><img src="./image/leftimg.png " />生活用品</div>
+                            <a href="/admin/dailyuse "><span class="sublist-icon glyphicon glyphicon-paperclip "></span><span class="sub-title ">生活用品</span></a> </li>
+                        <li>
+                            <div class="showtitle " style="width:100px; "><img src="./image/leftimg.png " />美妆</div>
+                            <a href="/admin/makeup "><span class="sublist-icon glyphicon glyphicon-star-empty "></span><span class="sub-title ">美妆</span></a> </li>
+                        <li>
+                            <div class="showtitle " style="width:100px; "><img src="./image/leftimg.png " />手机数码</div>
+                            <a href="/admin/digital "><span class="sublist-icon glyphicon glyphicon-phone "></span><span class="sub-title ">手机数码</span></a> </li>
+                        <li>
+                            <div class="showtitle " style="width:100px; "><img src="./image/leftimg.png " />添加分类</div>
+                            <a href="javascript:; "><span class="sublist-icon glyphicon glyphicon-plus-sign "></span><span class="sub-title ">添加分类</span></a> </li>
+
+                    </ul>
+                </div>
+                <div class="sBox ">
+                    <div class="subNav sublist-up "><span class="title-icon glyphicon glyphicon-chevron-up "></span><span class="sublist-title ">关于我们</span></div>
+                    <ul class="navContent " style="display:none ">
+                        <li>
+                            <div class="showtitle " style="width:100px; "><img src="./image/leftimg.png " />添加新闻</div>
+                            <a href="# "><span class="sublist-icon glyphicon glyphicon-user "></span><span class="sub-title ">添加新闻</span></a></li>
+                        <li>
+                            <div class="showtitle " style="width:100px; "><img src="./image/leftimg.png " />添加新闻</div>
+                            <a href="# "><span class="sublist-icon glyphicon glyphicon-user "></span><span class="sub-title ">新闻管理</span></a></li>
+                        <li>
+                            <div class="showtitle " style="width:100px; "><img src="./image/leftimg.png " />添加新闻</div>
+                            <a href="# "><span class="sublist-icon glyphicon glyphicon-user "></span><span class="sub-title ">添加新闻</span></a></li>
+                        <li>
+                            <div class="showtitle " style="width:100px; "><img src="./image/leftimg.png " />新闻管理</div>
+                            <a href="# "><span class="sublist-icon glyphicon glyphicon-user "></span><span class="sub-title ">新闻管理</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
